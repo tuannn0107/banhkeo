@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://mangkhobalan.com/sitemap.xml

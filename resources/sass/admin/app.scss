@@ -1,0 +1,30 @@
+.dropify-wrapper {
+    border: none;
+}
+
+.dropify-message p {
+    text-align: center;
+}
+
+.form-group .note-form-label {
+    position: initial;
+}
+
+.user-profile {
+    background: url(/images/admin/background/user-info.jpg) no-repeat;
+}
+
+.note-editor.note-frame {
+    border: none;
+}
+
+select.form-control.is-invalid {
+    background: none;
+}
+
+.floating-labels .focused .switch label {
+    position: relative;
+    top: -10px;
+    font-size: inherit;
+    color: #67757c;
+}

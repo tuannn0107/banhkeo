@@ -1,0 +1,40 @@
+@extends('admin.layouts.app')
+
+@section('title', __('{{model}}'))
+
+@section('content')
+    <div class="row">
+        <div class="col-md-5">
+            @includeWhen(isset(${{modelVariable}}), 'admin.{{modelPath}}.edit')
+            @includeWhen(!isset(${{modelVariable}}), 'admin.{{modelPath}}.create')
+        </div>
+        <div class="col-md-7">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title mb-5">@lang('All {{model}}')</h4>
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered display js-datatable w-100">
+                            <thead>
+                            <tr>
+                                <th></th>
+                                <th>@lang('Name')</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            @forelse(${{modelVariable}}List as ${{modelVariable}})
+                            <tr>
+                                <td>{{${{modelVariable}}->id}}</td>
+                                <td>{{${{modelVariable}}->name}}</td>
+                                <td><x-action route="{{modelPath}}" id="{{${{modelVariable}}->id}}" /></td>
+                            </tr>
+                            @empty
+                            @endforelse
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

@@ -1,0 +1,95 @@
+<?php
+
+namespace {{ namespace }};
+
+use Illuminate\Auth\Access\Response;
+use Illuminate\Auth\Access\HandlesAuthorization;
+use {{ namespacedModel }};
+use {{ namespacedUserModel }};
+
+class {{ class }}
+{
+    use HandlesAuthorization;
+
+    /**
+     * Determine whether the user can view any models.
+     *
+     * @param {{ user }} $user
+     * @return Response|bool
+     */
+    public function viewAny({{ user }} $user)
+    {
+        return $user->hasPermission('{{ modelPath }}');
+    }
+
+    /**
+     * Determine whether the user can view the model.
+     *
+     * @param {{ user }} $user
+     * @param {{ model }} ${{ modelVariable }}
+     * @return Response|bool
+     */
+    public function view({{ user }} $user, {{ model }} ${{ modelVariable }})
+    {
+        return $user->hasPermission('{{ modelPath }}');
+    }
+
+    /**
+     * Determine whether the user can create models.
+     *
+     * @param {{ user }} $user
+     * @return Response|bool
+     */
+    public function create({{ user }} $user)
+    {
+        return $user->hasPermission('{{ modelPath }}');
+    }
+
+    /**
+     * Determine whether the user can update the model.
+     *
+     * @param {{ user }} $user
+     * @param {{ model }} ${{ modelVariable }}
+     * @return Response|bool
+     */
+    public function update({{ user }} $user, {{ model }} ${{ modelVariable }})
+    {
+        return $user->hasPermission('{{ modelPath }}');
+    }
+
+    /**
+     * Determine whether the user can delete the model.
+     *
+     * @param {{ user }} $user
+     * @param {{ model }} ${{ modelVariable }}
+     * @return Response|bool
+     */
+    public function delete({{ user }} $user, {{ model }} ${{ modelVariable }})
+    {
+        return $user->hasPermission('{{ modelPath }}');
+    }
+
+    /**
+     * Determine whether the user can restore the model.
+     *
+     * @param {{ user }} $user
+     * @param {{ model }} ${{ modelVariable }}
+     * @return Response|bool
+     */
+    public function restore({{ user }} $user, {{ model }} ${{ modelVariable }})
+    {
+        return $user->hasPermission('{{ modelPath }}');
+    }
+
+    /**
+     * Determine whether the user can permanently delete the model.
+     *
+     * @param {{ user }} $user
+     * @param {{ model }} ${{ modelVariable }}
+     * @return Response|bool
+     */
+    public function forceDelete({{ user }} $user, {{ model }} ${{ modelVariable }})
+    {
+        return $user->hasPermission('{{ modelPath }}');
+    }
+}
